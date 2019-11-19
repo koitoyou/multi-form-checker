@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<title>multi purpose form</title>
+<style type="text/css">
+p { margin:0; }
+th { background-color: #eee; }
+td { background-color: #dfd; }
+.error-message {
+  color: #f00;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+</head>
+<body>
+<header>
+</header>
+<main>
+  <form id="auto-check-form" onsubmit="return test('#auto-check-form');">
+    <table>
+      <tbody>
+        <tr>
+          <th colspan="2">必須</th>
+          <th colspan="2">任意</th>
+        </tr>
+        <tr>
+          <th><label for="input-01">入力項目01<b class="required">（必須）</b></label></th>
+          <td>
+            <input type="text" name="input-01" data-required="true"><br>
+            <p class="error-message error-message-required input-01" style="display:none">入力項目01を入力してください。</p>
+          </td>
+          <th><label for="input-02">入力項目02</label></th>
+          <td>
+            <input type="text" name="input-02">
+          </td>
+        </tr>
+        <tr>
+          <th><label for="input-03">入力項目03<b class="required">（必須）</b></label></th>
+          <td>
+            <input type="text" name="input-03" data-required="true">
+            <p>エラーメッセージがなくても問題はない</p>
+          </td>
+          <th></th>
+          <td></td>
+        </tr>
+        <tr>
+          <th><label for="input-04">ラジオ項目04<b class="required">（必須）</b></label></th>
+          <td>
+            <input type="radio" name="input-04" value="1" data-required="true">1
+            <input type="radio" name="input-04" value="2" >2
+            <input type="radio" name="input-04" value="3" >3<br>
+            <p class="error-message error-message-required input-04" style="display:none">ラジオ項目04を選択してください。</p>
+          </td>
+          <th><label for="input-05">ラジオ項目05</label></th>
+          <td>
+            <input type="radio" name="input-05" value="1" >1
+            <input type="radio" name="input-05" value="2" >2
+            <input type="radio" name="input-05" value="3" >3<br>
+            <p class="error-message error-message-required input-05" style="display:none">ラジオ項目05を選択してください。</p>
+          </td>
+        </tr>
+        <tr>
+          <th><label for="input-06">テキストエリア06<b class="required">（必須）</b></label></th>
+          <td>
+            <textarea name="input-06" data-required="true"></textarea><br>
+            <p class="error-message error-message-required input-06" style="display:none">テキストエリア06を入力してください。</p>
+          </td>
+          <th><label for="input-07">テキストエリア07</label></th>
+          <td>
+            <textarea name="input-07"></textarea><br>
+            <p class="error-message error-message-required input-07" style="display:none">テキストエリア07を入力してください。</p>
+          </td>
+        </tr>
+        <tr>
+          <th><label for="input-08">メアド入力項目08<b class="required">（必須）</b></label></th>
+          <td>
+            <input type="text" name="input-08" data-required="true" data-checkemail="true">
+            <p class="error-message error-message-required input-08" style="display:none">メアド入力項目08を入力してください。</p>
+            <p class="error-message error-message-checkemail input-08" style="display:none">メアド入力項目08はメールアドレスを入力してください。</p>
+          </td>
+          <th></th>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+    <input type="submit" value="submit">
+  </form>
+  </div>
+</main>
+<footer>
+</footer>
+</body>
+<script src="./formutils.js"></script>
+<script>
+
+</script>
+</html>
